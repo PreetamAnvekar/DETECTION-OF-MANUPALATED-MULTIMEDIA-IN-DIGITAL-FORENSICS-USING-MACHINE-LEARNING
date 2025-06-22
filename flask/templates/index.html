@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="static/style1.css">
+    </head>
+    <body>
+    <section>
+
+   <nav>
+    <h1>Project</h1>
+   </nav>
+</section>  
+        <section class="header">
+            <!-- <div class="info" style=" margin-right: 32.5%;">
+                <h3>Media Detection in Digital Forensics</h3>
+                &#9999; Detection of manipulated multimedia in digital forensics is the process of identifying whether an image or video has been tampered with or manipulated in some way. <br><br>&#9999;Techniques used to detect manipulated multimedia can include manual examination by a digital forensic examiner or the use of specialized software designed to detect manipulation. <br><br>&#9999;These techniques may also involve the use of machine learning, or statistical analysis to identify patterns or anomalies in the multimedia that may indicate tampering. <br><br>&#9999;The goal of detecting manipulated multimedia is to provide evidence that can be used in court or other legal proceedings, helping to ensure the integrity of digital evidence and the validity of criminal investigations.
+            </div> -->
+            <div class="login-box">
+                <h1 style="color: orange;"> FILE UPLOAD</h1>
+                <h3>{%if error_msg %}{{error_msg}}{%endif%}</h3>
+                <form  class="box"action = "/upload" method = "post" enctype="multipart/form-data">
+                    <div class="drop-zone">
+                        <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                        <input type="file" name="file" class="drop-zone__input">
+                      </div>
+                      
+                      <script src="static/main.js"></script>
+                      <input type="submit" value="SUBMIT" class="form-submit-button">
+                </form>
+            </div>
+            <!-- <div class="info">
+                <h3>Image File Format</h3>
+                1.JPEG (Joint Photographic Experts Group)<br>2.PNG (Portable Network Graphics)
+                <br><br>
+                <h3>Video File Format</h3>
+                1.MP4 (MPEG-4 Part 14)<br>2.MOV (QuickTime File Format)
+                <br><br>
+                <h3>Audio File Format</h3>
+                1.MP3 (MPEG-1 Audio Layer 3)<br>2.WAV (Waveform Audio File Format)
+            </div> -->
+    </section>
+
+    </body>
+</html>

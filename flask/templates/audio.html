@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="static/style1.css">
+        <link rel="stylesheet" href="static/audio.css">
+    </head>
+    <body>
+    <section>
+
+   <nav>
+    <h1>Project</h1>
+    
+   </nav>
+        
+        {% if redirect %}
+        <script>
+            var a=('{{redirect}}');
+            setTimeout(function() {
+                window.location.href = a;
+            }, 3000);
+        </script> 
+        {% endif %}
+        <center>
+        <div style="margin-top: 5%;" >
+          {% if filename %}
+          <span>ORIGNAL AUDIO CLIP</span>
+          <center><audio controls>
+
+              <source src="{{filename}}" type="audio/mpeg">
+            </audio></center>
+          {% endif %}
+      </div></center>
+      
+        <div class="card" style="margin-left:25%;margin-top: 10%;">
+            <div class="card-inner">{% if msg %}{{msg}}{% endif %}</div>
+        </div>
+        
+        </div>
+
+       
+    
+           
+            
+      </div>
+        
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="static/style1.css">
+        <link rel="stylesheet" href="static/video.css">
+    </head>
+    <body>
+    <section>
+
+   <nav>
+    <h1>Detection of Manipulated Multimedia in Digital Forensics Using Machine Learning Techniques</h1>
+    <div class="navlink">
+
+        <ul>
+           <li><a href="#rw">Research Work</a></li>
+        </ul>
+    </div>
+   </nav>
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class={{name[0]}}>File Uploaded sucessfully</li><!--
+         
+         --><li class={{name[1]}}>Converted frames and resized</li><!--
+        --><li class={{name[2]}}>Converted Ela of frames</li><!--
+        --><li class={{name[3]}}>CNN model Loaded sucessfully</li><!--
+         --><li class={{name[4]}}>Result Display</li>
+        </ol>
+        {% if redirect %}
+        <script>
+            var a=('{{redirect}}');
+            setTimeout(function() {
+                window.location.href = a;
+            },2000);
+        </script> 
+        {% endif %}
+        <div>
+        <div class="downtext" style="margin-left: 20%;margin-right:0%;width: 13%;">Extracting Frames and Resizing</div>
+        <div class="downtext" style="width: 13%;">Converted Ela of frames</div>
+        <div class="downtext">CNN Model Loading </div>
+        <div class="downtext">Predicting Result</div>
+        </div>
+        <div class="arr" style="margin-left: 24%">&#8595;</div>
+        <div class="arr">&#8595;</div>
+        <div class="arr">&#8595;</div>
+        <div class="arr">&#8595;</div>
+        <div class="card" style="margin-left:16%;">
+            <div class="card-inner">{% if msg %}{{msg[0]}}{% endif %}</div>
+        </div>
+        <div class="card" >
+            <div class="card-inner" >{% if msg %}{{msg[1]}}{% endif %}</div>
+        </div>
+        <div class="card">
+            <div class="card-inner">{% if msg %}{{msg[2]}}{% endif %}</div>
+        </div>
+        <div class="card">
+            <div class="card-inner">{% if msg %}{{msg[3]}}{% endif %}</div>
+        </div>
+
+        <h2></h2>
+	
+        <div class="row">
+            <div class="column">
+                <span>ORIGNAL VIDEO CLIP</span>
+                {% if filename %}
+                <center><video controls width="300px" height="300px">
+  
+                    <source src="{{filename}}" type="audio/mpeg">
+                  </audio></center>
+                {% endif %}
+            </div>
+    
+            <div class="column">
+                <span>ELA VIDEO CLIP</span>
+                {% if filename1 %}
+                <center><video controls width="300px" height="300px">
+  
+                    <source src="static/output_video.mp4" type="audio/mpeg">
+                  </audio></center>
+                {% endif %}
+            </div>
+            <div class="column">
+              <span>RESULT PERCENTAGE</span>
+              {%if result=="it_might_be_fake" %}
+              <div class={{result}}><span>Result: </span> It Might be Fake</div>
+              {%else%}
+              <div class={{result}}><span>Result: </span> {{result}}</div>
+              {%endif%}
+              <div class={{result}}><span>Confidence:</span>  {{confidence}}{% if confidence%} % {%endif%}</div>
+          </div>
+            
+        </div>
+        <div class="container" id="rw">
+            <details>
+              <summary>
+                <div class="button">
+                  Research Work
+                </div>
+                <div class="details-modal-overlay"></div>
+              </summary>
+              <div class="details-modal">
+                <div class="details-modal-title">
+                  <h1>Research work</h1>
+                </div>
+                <div class="details-modal-content">
+                  <p>
+                    <table>
+                        <div class="table-horizontal-container">
+                            <table class="unfixed-table">
+                              <thead>
+                                <tr><th></th><th>Existing System</th><th>Proposed System</th></tr>
+                              </thead>
+                              <tbody>
+                                <tr><th>Dataset</th><td>-</td><td>CASIA 2.0</td></tr>
+                                <tr><th>Model</th><td>-</td><td>VGG16</td></tr>
+                                <tr><th>Image Size</th><td>-</td><td>224 X 224</td></tr>
+                                <tr><th>Training Accuracy</th><td>-</td><td>92.17%</td></tr>
+                                <tr><th>Testing Accuracy</th><td>-</td><td>87.87%</td></tr>
+                            </tbody>
+                        
+                    </table>
+                   <div class="p"> As per our knowledge complete video frame detection module doesn't exist, So we have bulid have come up with new module.
+                  </div> </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        
+    </body>
+</html>
